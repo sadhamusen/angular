@@ -1,0 +1,15 @@
+<div class="movie-list-container">
+  <app-form></app-form>
+  <mat-form-field class="example-full-width">
+    <mat-label>search</mat-label>
+    <input type="text" (keyup)="filter($event)" matInput placeholder="Title" />
+  </mat-form-field>
+
+  <p>{{ bookes }}</p>
+  <app-bookcard
+    *ngFor="let m of bookes$ | async"
+    [book]="m"
+    (delete)="deleteMovie($event)"
+  ></app-bookcard>
+  <!-- <app-forms-example (add)="addMovie($event)"></app-forms-example> -->
+</div>

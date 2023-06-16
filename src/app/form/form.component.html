@@ -1,0 +1,61 @@
+<form class="example-form" [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+  <mat-form-field class="example-full-width">
+    <mat-label>Title</mat-label>
+    <input type="text" matInput placeholder="Title" formControlName="title" />
+    <mat-error *ngIf="title?.hasError('required')">
+      Title is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Image</mat-label>
+    <input type="text" matInput placeholder="image" formControlName="image" />
+    <mat-error *ngIf="image?.hasError('required')">
+      image is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="image?.hasError('pattern')">
+      image is <strong>not a valid url</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Author</mat-label>
+    <input type="text" matInput placeholder="Author" formControlName="author" />
+    <mat-error *ngIf="author?.hasError('required')">
+      Author is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Category</mat-label>
+    <input
+      type="text"
+      matInput
+      placeholder="Category"
+      formControlName="category"
+    />
+    <mat-error *ngIf="category?.hasError('required')">
+      Category is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Publication Date</mat-label>
+    <input
+      type="date"
+      matInput
+      placeholder="Category"
+      formControlName="PublicationDate"
+    />
+    <mat-error *ngIf="PublicationDate?.hasError('required')">
+      Publication Date is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>status</mat-label>
+    <input type="text" matInput placeholder="status" formControlName="status" />
+    <mat-error *ngIf="status?.hasError('required')">
+      status is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <button mat-button color="primary" [disabled]="!bookForm.valid">
+    Primary
+  </button>
+</form>

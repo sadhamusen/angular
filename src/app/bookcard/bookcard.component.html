@@ -1,0 +1,23 @@
+<body>
+  <div class="movie-container">
+    <img class="movie-poster" [src]="book.image" [alt]="book.title" />
+    <div class="movie-spec">
+      <p>{{ book.title }}</p>
+    </div>
+    <div class="movie-spec">
+      <p>{{ book.author }}</p>
+    </div>
+    <div class="movie-spec">
+      <p>{{ book.category }}</p>
+    </div>
+    <div class="movie-spec">
+      <p>{{ book.PublicationDate }}</p>
+    </div>
+    <div class="movie-spec">
+      <p>{{ book.status }}</p>
+    </div>
+    <button (click)="edit(book.id)">edit</button>
+    <button (click)="details(book.id)">Info</button>
+    <button (click)="delBook(book.id)">delete</button>
+  </div>
+</body>
