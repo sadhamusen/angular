@@ -27,11 +27,7 @@ export class HomeComponent {
   }
 
   filter(event: any) {
-    this.bookes$ = [
-      this.bookes.filter((user: any) =>
-        user.title.includes(event.target.value)
-      ),
-    ];
+    this.bookes$ = this.service.filtersearch(event.target.value);
     // this.bookes$ = this.service.filtersearch(event.target.value);
   }
   // trackBy(index: number, mv:any) {
