@@ -26,7 +26,6 @@ export class HomeComponent {
 
     // })
     this.users$ = this.service.getMovies();
-    this.filteredUsers$ = this.users$;
     this.bookes$ = this.service.getMovies();
   }
 

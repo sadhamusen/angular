@@ -1,11 +1,27 @@
-<div class="movie-list-container">
-  <app-form></app-form>
-  <mat-form-field class="example-full-width">
-    <mat-label>search</mat-label>
-    <input type="text" (keyup)="filter($event)" matInput placeholder="Title" />
+<mat-toolbar>
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Book Club</span>
+  <span class="example-spacer"></span>
+  <a routerLink=""><span>Home</span></a>
+  <a routerLink="form"><span>Add Book</span></a>
+  <mat-form-field appearance="fill">
+    <mat-label>Search Something</mat-label>
+    <input
+      type="text"
+      (keyup)="filter($event)"
+      matInput
+      placeholder="Type something.."
+    />
+    <mat-icon matSuffix>search</mat-icon>
   </mat-form-field>
-
-  <p>{{ bookes }}</p>
+</mat-toolbar>
+<div class="movie-list-container">
   <app-bookcard
     *ngFor="let m of bookes$ | async"
     [book]="m"

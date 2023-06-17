@@ -1,3 +1,15 @@
+<mat-toolbar>
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Book Club</span>
+  <span class="example-spacer"></span>
+  <a routerLink=""><span>Home</span></a></mat-toolbar
+>
 <form class="example-form" [formGroup]="bookForm" (ngSubmit)="onSubmit()">
   <mat-form-field class="example-full-width">
     <mat-label>Title</mat-label>
@@ -47,9 +59,13 @@
       Publication Date is <strong>required</strong>
     </mat-error>
   </mat-form-field>
-  <mat-form-field class="example-full-width">
+  <mat-form-field appearance="fill">
     <mat-label>status</mat-label>
-    <input type="text" matInput placeholder="status" formControlName="status" />
+    <mat-select formControlName="status">
+      <mat-option *ngFor="let country of countriesList" [value]="country">{{
+        country
+      }}</mat-option>
+    </mat-select>
     <mat-error *ngIf="status?.hasError('required')">
       status is <strong>required</strong>
     </mat-error>

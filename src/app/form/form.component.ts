@@ -30,6 +30,8 @@ export class FormComponent {
     private sanitizer: DomSanitizer
   ) {}
   frameworks: any;
+  countriesList: any[] = ['currently reading', 'Have Read', 'Plan to Read'];
+
   ngOnInit() {
     // this.route.paramMap.subscribe((route) => {
     //   const movieid = route.get('id');

@@ -1,4 +1,4 @@
-<body>
+<!-- <body>
   <div class="movie-container">
     <img class="movie-poster" [src]="book.image" [alt]="book.title" />
     <div class="movie-spec">
@@ -20,4 +20,54 @@
     <button (click)="details(book.id)">Info</button>
     <button (click)="delBook(book.id)">delete</button>
   </div>
-</body>
+</body> -->
+<div class="book">
+  <div>
+    <div class="images">
+      <img [src]="book.image" style="height: auto; width: 250px" />
+    </div>
+    <div class="title">
+      <p>{{ book.title }}</p>
+    </div>
+    <div class="author">
+      <p>{{ book.author }}</p>
+    </div>
+    <p class="des">
+      {{ book.des | slice : 0 : 200 }}
+      <span *ngIf="!showMore">...</span>
+      <a
+        href=""
+        (click)="details(book.id)"
+        *ngIf="!showMore"
+        (click)="showMore = true"
+        >[Show More]</a
+      >
+    </p>
+    <div class="button">
+      <button
+        (click)="edit(book.id)"
+        mat-icon-button
+        color="basic"
+        aria-label="Edit is used edit content of the book"
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button
+        (click)="delBook(book.id)"
+        mat-icon-button
+        color="warn"
+        aria-label="delete is used delete content of the book"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button
+        (click)="details(book.id)"
+        mat-icon-button
+        color="primary"
+        aria-label="info is used to show the description"
+      >
+        <mat-icon>info</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

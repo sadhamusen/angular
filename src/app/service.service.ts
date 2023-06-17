@@ -34,9 +34,6 @@ export class ServiceService {
       );
   }
   filtersearch(event: any) {
-    this.http
-      .get(`https://648a951417f1536d65e94e7c.mockapi.io/movies/`)
-      .pipe(tap(event));
     return this.http
       .get(`https://648a951417f1536d65e94e7c.mockapi.io/movies/`)
       .pipe(

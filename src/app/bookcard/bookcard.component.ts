@@ -17,12 +17,16 @@ export class BookcardComponent {
     PublicationDate: '02/03/2002',
     status: '',
     image: '',
+    des: '',
   };
 
   @Output() delete = new EventEmitter<string>();
   delBook(id: string) {
     this.delete.emit(id);
   }
+  showMore = false;
+  text: any;
+
   details(id: string) {
     this.route.navigate([`bookdetails/${id}`]);
   }

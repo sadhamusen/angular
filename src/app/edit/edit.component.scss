@@ -2,4 +2,11 @@
     display: grid;
     place-content: center;
     min-height: 100vh;
-}
+}.example-spacer {
+    flex: 1 1 auto;
+  }
+  a, u {
+    text-decoration: none;
+    color: inherit;
+    padding: 10px;
+  }

@@ -16,7 +16,10 @@ import { BookcardComponent } from './bookcard/bookcard.component';
 import { BookdetailsComponent } from './bookdetails/bookdetails.component';
 import { EditComponent } from './edit/edit.component';
 import { MatTableDataSource } from '@angular/material/table';
-
+import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +30,10 @@ import { MatTableDataSource } from '@angular/material/table';
     EditComponent,
   ],
   imports: [
+    MatIconModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatToolbarModule,
     BrowserModule,
     AppRoutingModule,
     MatFormFieldModule,
