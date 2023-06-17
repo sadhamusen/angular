@@ -37,7 +37,12 @@
 </mat-toolbar>
 <div class="vis">
   <div class="search-box">
-    <input class="search-input" type="text" placeholder="Search something.." />
+    <input
+      class="search-input"
+      (keyup)="filter($event)"
+      type="text"
+      placeholder="Search something.."
+    />
     <button class="search-btn"><i class="fas fa-search"></i></button>
   </div>
 </div>
