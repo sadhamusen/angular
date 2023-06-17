@@ -49,13 +49,16 @@
 }
 img{
     border-radius: 10px;
+    object-fit: cover;
 }
 .title{
     font-size: 12px;
     text-align: center;
 }
 .images{
-    height: 400px;
+    height: 378px;
+    overflow: hidden;
+    border-radius: 10px;
 }
 .author{
     font-size: 10px;

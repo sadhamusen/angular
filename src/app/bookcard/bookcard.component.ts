@@ -18,6 +18,7 @@ export class BookcardComponent {
     status: '',
     image: '',
     des: '',
+    rating: 0,
   };
 
   @Output() delete = new EventEmitter<string>();

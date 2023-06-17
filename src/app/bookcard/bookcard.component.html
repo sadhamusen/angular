@@ -26,6 +26,13 @@
     <div class="images">
       <img [src]="book.image" style="height: auto; width: 250px" />
     </div>
+
+    <star-rating
+      [starType]="'svg'"
+      readonly="true"
+      [rating]="book.rating"
+    ></star-rating>
+
     <div class="title">
       <p>{{ book.title }}</p>
     </div>
