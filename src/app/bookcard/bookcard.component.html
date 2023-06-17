@@ -35,11 +35,7 @@
     <p class="des">
       {{ book.des | slice : 0 : 200 }}
       <span *ngIf="!showMore">...</span>
-      <a
-        href=""
-        (click)="details(book.id)"
-        *ngIf="!showMore"
-        (click)="showMore = true"
+      <a (click)="details(book.id)" *ngIf="!showMore" (click)="showMore = true"
         >[Show More]</a
       >
     </p>
