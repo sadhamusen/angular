@@ -8,8 +8,14 @@
   </button>
   <span>Book Club</span>
   <span class="example-spacer"></span>
-  <a routerLink=""><span>Home</span></a></mat-toolbar
->
+  <a routerLink="" class="dis"><span>Home</span></a>
+  <a routerLink="" class="vis"
+    ><mat-icon
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="home"
+    ></mat-icon></a
+></mat-toolbar>
 <form class="example-form" [formGroup]="bookForm" (ngSubmit)="onSubmit()">
   <mat-form-field class="example-full-width">
     <mat-label>Title</mat-label>

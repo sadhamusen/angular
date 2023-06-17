@@ -11,3 +11,13 @@
     color: inherit;
     padding: 10px;
   }
+  .vis{
+    display: none;
+  }
+  @media only screen and (max-width: 580px) {
+    .dis {
+      display: none;
+    }
+    .vis{
+        display: block;
+    }}

@@ -8,9 +8,23 @@
   </button>
   <span>Book Club</span>
   <span class="example-spacer"></span>
-  <a routerLink=""><span>Home</span></a>
-  <a routerLink="form"><span>Add Book</span></a>
-  <mat-form-field appearance="fill">
+  <a routerLink="" class="dis"><span>Home</span></a>
+  <a routerLink="form" class="dis"><span>Add Book</span></a>
+  <a routerLink="" class="vis"
+    ><mat-icon
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="home"
+    ></mat-icon
+  ></a>
+  <a routerLink="form" class="vis"
+    ><mat-icon
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="library_add"
+    ></mat-icon
+  ></a>
+  <mat-form-field appearance="fill" class="dis">
     <mat-label>Search Something</mat-label>
     <input
       type="text"
@@ -21,6 +35,12 @@
     <mat-icon matSuffix>search</mat-icon>
   </mat-form-field>
 </mat-toolbar>
+<div class="vis">
+  <div class="search-box">
+    <input class="search-input" type="text" placeholder="Search something.." />
+    <button class="search-btn"><i class="fas fa-search"></i></button>
+  </div>
+</div>
 <div class="movie-list-container">
   <app-bookcard
     *ngFor="let m of bookes$ | async"
