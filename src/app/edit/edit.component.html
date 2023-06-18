@@ -88,7 +88,7 @@
       status is <strong>required</strong>
     </mat-error>
   </mat-form-field>
-  <mat-form-field appearance="fill">
+  <!-- <mat-form-field appearance="fill">
     <mat-label>Favourite</mat-label>
     <mat-select formControlName="fav">
       <mat-option *ngFor="let country of Favourite" [value]="country">{{
@@ -98,6 +98,6 @@
     <mat-error *ngIf="fav?.hasError('required')">
       favourite is <strong>required</strong>
     </mat-error>
-  </mat-form-field>
+  </mat-form-field> -->
   <button mat-button color="primary" [disabled]="!bookForm.valid">save</button>
 </form>

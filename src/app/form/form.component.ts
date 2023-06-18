@@ -18,7 +18,7 @@ export class FormComponent {
     category: ['', [Validators.required]],
     status: ['', Validators.required],
     image: ['', [Validators.required, Validators.pattern(this.urlregex)]],
-    fav: ['', Validators.required],
+    // fav: ['', Validators.required],
     rating: ['', Validators.required],
   });
   @Output() add = new EventEmitter<FormGroup>();
@@ -73,9 +73,9 @@ export class FormComponent {
   get status() {
     return this.bookForm.get('status');
   }
-  get fav() {
-    return this.bookForm.get('fav');
-  }
+  // get fav() {
+  //   return this.bookForm.get('fav');
+  // }
   get rating() {
     return this.bookForm.get('rating');
   }
