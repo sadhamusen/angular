@@ -40,12 +40,4 @@ export class Bookcard1Component {
   edit(id: string) {
     this.route.navigate([`bookdetails/edit/${id}`]);
   }
-  fav: boolean = false;
-  addToFav(val: any) {
-    // alert('Added to Fav');
-    this.fav = true;
-    this.service.addToFav(val);
-    console.log(val);
-    this.route.navigate([`favourite`]);
-  }
 }
