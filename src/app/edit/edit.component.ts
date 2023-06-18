@@ -19,6 +19,8 @@ export class EditComponent {
     category: ['', [Validators.required]],
     status: ['', Validators.required],
     image: ['', [Validators.required, Validators.pattern(this.urlregex)]],
+    fav: ['', Validators.required],
+    rating: ['', Validators.required],
   });
   @Output() add = new EventEmitter<FormGroup>();
   movie: any;
@@ -32,19 +34,18 @@ export class EditComponent {
   ) {}
   frameworks: any;
   countriesList: any[] = ['currently reading', 'Have Read', 'Plan to Read'];
-
+  Favourite: any[] = ['true', 'false'];
   ngOnInit() {
     this.route.paramMap.subscribe((route) => {
       const movieid = route.get('id');
       this.movie = movieid;
       this.service.getMoviesByid(movieid as string).subscribe((data: any) => {
-        console.log(data.name);
+        console.log(data.fav);
         this.bookForm.patchValue(data);
         ``;
       });
     });
   }
-
   onSubmit() {
     if (this.bookForm.valid) {
       this.service.edit(this.bookForm, this.movie).subscribe(() => {
@@ -70,5 +71,11 @@ export class EditComponent {
   }
   get status() {
     return this.bookForm.get('status');
+  }
+  get fav() {
+    return this.bookForm.get('fav');
+  }
+  get rating() {
+    return this.bookForm.get('rating');
   }
 }

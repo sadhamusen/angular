@@ -54,6 +54,18 @@
     </mat-error>
   </mat-form-field>
   <mat-form-field class="example-full-width">
+    <mat-label>rating</mat-label>
+    <input
+      type="number"
+      matInput
+      placeholder="Rating"
+      formControlName="rating"
+    />
+    <mat-error *ngIf="rating?.hasError('required')">
+      rating is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
     <mat-label>Publication Date</mat-label>
     <input
       type="date"
@@ -76,7 +88,17 @@
       status is <strong>required</strong>
     </mat-error>
   </mat-form-field>
-
+  <mat-form-field appearance="fill">
+    <mat-label>Favourite</mat-label>
+    <mat-select formControlName="fav">
+      <mat-option *ngFor="let country of Favourite" [value]="country">{{
+        country
+      }}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="fav?.hasError('required')">
+      favourite is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
   <button mat-button color="primary" [disabled]="!bookForm.valid">
     submit
   </button>

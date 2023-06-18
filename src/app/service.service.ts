@@ -3,11 +3,29 @@ import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { catchError, concatMap, tap } from 'rxjs';
 
+interface book {
+  title: string;
+  author: string;
+  category: string;
+  PublicationDate: string;
+  status: string;
+  image: string;
+  des: string;
+  id: any;
+  rating: number;
+  fav: boolean;
+}
 @Injectable({
   providedIn: 'root',
 })
 export class ServiceService {
   constructor(private http: HttpClient) {}
+  Fav: book[] = [];
+
+  addToFav(val: any) {
+    this.Fav.push(val);
+    console.log(val);
+  }
   edit(formGroup: FormGroup, id: string) {
     return this.http
       .put(

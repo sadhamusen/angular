@@ -1,40 +1,13 @@
-<!-- <body>
-  <div class="movie-container">
-    <img class="movie-poster" [src]="book.image" [alt]="book.title" />
-    <div class="movie-spec">
-      <p>{{ book.title }}</p>
-    </div>
-    <div class="movie-spec">
-      <p>{{ book.author }}</p>
-    </div>
-    <div class="movie-spec">
-      <p>{{ book.category }}</p>
-    </div>
-    <div class="movie-spec">
-      <p>{{ book.PublicationDate }}</p>
-    </div>
-    <div class="movie-spec">
-      <p>{{ book.status }}</p>
-    </div>
-    <button (click)="edit(book.id)">edit</button>
-    <button (click)="details(book.id)">Info</button>
-    <button (click)="delBook(book.id)">delete</button>
-  </div>
-</body> -->
 <div class="book">
   <div>
     <div class="images">
       <img [src]="book.image" style="height: auto; width: 250px" />
     </div>
-
-    <star-rating
-      [starType]="'svg'"
-      readonly="true"
-      [rating]="book.rating"
-    ></star-rating>
-
+    <div class="rating">
+      <ngb-rating [max]="5" [rate]="book.rating" [readonly]="true"></ngb-rating>
+    </div>
     <div class="title">
-      <p>{{ book.title }}</p>
+      <p>{{ book.title | titlecase }}</p>
     </div>
     <div class="author">
       <p>{{ book.author }}</p>
@@ -45,7 +18,11 @@
     <p class="des">
       {{ book.des | slice : 0 : 200 }}
       <span *ngIf="!showMore">...</span>
-      <a (click)="details(book.id)" *ngIf="!showMore" (click)="showMore = true"
+      <a
+        href="bookdetails/{{ book.id }}"
+        (click)="details(book.id)"
+        *ngIf="!showMore"
+        (click)="showMore = true"
         >[Show More]</a
       >
     </p>
@@ -56,7 +33,7 @@
         color="basic"
         aria-label="Edit is used edit content of the book"
       >
-        <mat-icon>edit</mat-icon>
+        <mat-icon matTooltip="edit">edit</mat-icon>
       </button>
       <button
         (click)="delBook(book.id)"
@@ -64,7 +41,7 @@
         color="warn"
         aria-label="delete is used delete content of the book"
       >
-        <mat-icon>delete</mat-icon>
+        <mat-icon matTooltip="delete">delete</mat-icon>
       </button>
       <button
         (click)="details(book.id)"
@@ -72,7 +49,15 @@
         color="primary"
         aria-label="info is used to show the description"
       >
-        <mat-icon>info</mat-icon>
+        <mat-icon matTooltip="info">info</mat-icon>
+      </button>
+      <button
+        (click)="addToFav(book)"
+        mat-icon-button
+        color="primary"
+        aria-label="favourite is used to show the description"
+      >
+        <mat-icon matTooltip="favorite">add</mat-icon>
       </button>
     </div>
   </div>

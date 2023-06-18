@@ -1,14 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { ServiceService } from '../service.service';
 @Component({
   selector: 'app-bookcard',
   templateUrl: './bookcard.component.html',
   styleUrls: ['./bookcard.component.scss'],
 })
 export class BookcardComponent {
-  constructor(private route: Router, private http: HttpClient) {}
+  constructor(
+    private route: Router,
+    private http: HttpClient,
+    public service: ServiceService
+  ) {}
   @Input() book = {
     id: '0',
     title: 'Vikram',
@@ -33,5 +37,13 @@ export class BookcardComponent {
   }
   edit(id: string) {
     this.route.navigate([`bookdetails/edit/${id}`]);
+  }
+  fav: boolean = false;
+  addToFav(val: any) {
+    // alert('Added to Fav');
+    this.fav = true;
+    this.service.addToFav(val);
+    console.log(val);
+    this.route.navigate([`favourite`]);
   }
 }

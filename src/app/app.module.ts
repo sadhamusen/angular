@@ -21,6 +21,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { StarRatingModule } from 'angular-star-rating';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { FavouriteComponent } from './favourite/favourite.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,9 +34,13 @@ import { StarRatingModule } from 'angular-star-rating';
     BookcardComponent,
     BookdetailsComponent,
     EditComponent,
+    NotfoundComponent,
+    FavouriteComponent,
   ],
   imports: [
     MatIconModule,
+    MatTooltipModule,
+    MatDatepickerModule,
     MatSelectModule,
     MatButtonModule,
     MatToolbarModule,
@@ -44,6 +53,7 @@ import { StarRatingModule } from 'angular-star-rating';
     HttpClientModule,
     MatCardModule,
     StarRatingModule.forRoot(),
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
