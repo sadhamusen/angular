@@ -36,6 +36,17 @@ export class ServiceService {
       )
       .subscribe((x) => x);
   }
+  getFav() {
+    return this.http
+      .get(`https://648a951417f1536d65e94e7c.mockapi.io/favourite`)
+      .pipe(
+        catchError((err) => {
+          console.log(err);
+
+          return [];
+        })
+      );
+  }
   edit(formGroup: FormGroup, id: string) {
     return this.http
       .put(
@@ -103,6 +114,19 @@ export class ServiceService {
     console.log('Delete', id);
     return this.http
       .delete(`https://648a951417f1536d65e94e7c.mockapi.io/movies/${id}`)
+      .pipe(
+        catchError((err) => {
+          console.log(err);
+
+          return [];
+        }),
+        concatMap(() => this.getMovies())
+      );
+  }
+  deletefav(id: string) {
+    console.log('Delete', id);
+    return this.http
+      .delete(`https://648a951417f1536d65e94e7c.mockapi.io/favourite/${id}`)
       .pipe(
         catchError((err) => {
           console.log(err);

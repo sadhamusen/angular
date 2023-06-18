@@ -26,6 +26,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { FavouriteComponent } from './favourite/favourite.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { Bookcard1Component } from './bookcard1/bookcard1.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     EditComponent,
     NotfoundComponent,
     FavouriteComponent,
+    Bookcard1Component,
   ],
   imports: [
     MatIconModule,

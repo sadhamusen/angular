@@ -16,15 +16,17 @@ export class FavouriteComponent {
   ) {}
   showMore = false;
   text: any;
-  all = this.service.Fav;
-  deleteFromFav(book: any) {
-    const ind = this.all.indexOf(book);
-    this.all.splice(ind, 1);
+  bookes1$: any;
+  ngOnInit() {
+    this.bookes1$ = this.service.getFav();
   }
   details(id: string) {
     this.route.navigate([`bookdetails/${id}`]);
   }
   edit(id: string) {
     this.route.navigate([`bookdetails/edit/${id}`]);
+  }
+  deletefav(id: string) {
+    this.bookes1$ = this.service.deletefav(id);
   }
 }
