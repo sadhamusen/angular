@@ -40,6 +40,9 @@
       <p>{{ book.author }}</p>
     </div>
     <p class="des">
+      Status:<b>{{ book.status }}</b>
+    </p>
+    <p class="des">
       {{ book.des | slice : 0 : 200 }}
       <span *ngIf="!showMore">...</span>
       <a (click)="details(book.id)" *ngIf="!showMore" (click)="showMore = true"
