@@ -25,6 +25,16 @@ export class ServiceService {
   addToFav(val: any) {
     this.Fav.push(val);
     console.log(val);
+    return this.http
+      .post(`https://648a951417f1536d65e94e7c.mockapi.io/favourite`, val)
+      .pipe(
+        catchError((err) => {
+          console.log(err);
+
+          return [];
+        })
+      )
+      .subscribe((x) => x);
   }
   edit(formGroup: FormGroup, id: string) {
     return this.http
