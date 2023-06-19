@@ -133,7 +133,7 @@ export class ServiceService {
 
           return [];
         }),
-        concatMap(() => this.getMovies())
+        concatMap(() => this.getFav())
       );
   }
 }
