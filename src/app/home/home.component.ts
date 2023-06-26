@@ -51,4 +51,5 @@ export class HomeComponent {
   deleteMovie(id: any) {
     this.bookes$ = this.service.deleteMovie(id);
   }
+  //sadham
 }
