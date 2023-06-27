@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "bookclubtest": {
+    "bookclub": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "bookclubtest:build:production"
+              "browserTarget": "bookclub:build:production"
             },
             "development": {
-              "browserTarget": "bookclubtest:build:development"
+              "browserTarget": "bookclub:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "bookclubtest:build"
+            "browserTarget": "bookclub:build"
           }
         },
         "test": {
